@@ -1,0 +1,49 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+font-size: 16px;
+color: #F8F8F8;
+background-color: #FFF;
+}
+
+.container {
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.icon {
+  max-height: 80px;
+  padding: 20px 10px;
+}
+
+.dog-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.bottom-buttons {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  background: white;
+  padding: 14px;
+  border: 14px;
+
+  border-radius: 40px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
