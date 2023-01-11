@@ -1,25 +1,31 @@
 // Remember to import the data and Dog class!
-// import {dogs} from 'data.js'
+ import dogs from './data.js'
+ import Dog from './Dog.js'
 
-// const container = document.querySelector("#container")
+// dogArray is set up so that it can be manipulated. Is there a way not to have this hard-coded though?
 
-// container.innerHTML = 
-// `<div class="top-nav">
-//     <img src="./images/icon-profile.png" alt="profile-icon"/>
-//     <img src="./images/logo.png" alt="logo-icon"/>
-//     <img src="./images/chat-profile.png" alt="chat-icon"/>
-// </div>
-// <div class="dog">
-//     <img src="" alt="dog-image">
-//     <h3>NAME</h3>
-//     <p>TAGLINE</p>
+ let dogArray = dogs
 
-// </div>
-// <div class="bottom-buttons">
-//     <i></i>
-//     <i></i>
-// </div>
-// `
+// pulls out the first dog object available from dogsArray or renders a new one
+
+const dog = new Dog(dogs[0])
+
+ function getNewDog() {
+  const nextDogData = dogArray.shift()
+  return nextDogData 
+ }
+ //  new Dog(nextDogData) : {}
+
+
+ function renderDog() {
+  document.querySelector('.dog').innerHTML = dog.getDogHtml()
+ }
+
+//  let dog = getNewDog()
+renderDog()
+ 
+
+
 
 
 

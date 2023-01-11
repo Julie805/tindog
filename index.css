@@ -41,7 +41,7 @@ background-color: #FFF;
   font-size: 2rem;
 }
 
-.dog-tag {
+.dog-bio {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -49,9 +49,8 @@ background-color: #FFF;
   color: #B7B7B7;
 }
 
-
 .bottom-buttons {
-  width: 70%;
+  width: 40%;
   margin: 25px auto;
   display: flex;
   justify-content: space-around;

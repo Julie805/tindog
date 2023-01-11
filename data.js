@@ -1,4 +1,4 @@
-export const dogs = [
+ const dogs = [
     {
         name: "Rex",
         avatar: "images/dog-rex.jpg",
@@ -24,4 +24,4 @@ export const dogs = [
     }
 ]
 
-// Remember to export the data!
+export default dogs
