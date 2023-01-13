@@ -90,3 +90,17 @@ background-color: #FFF;
 #cross:active, #cross:hover {
   background: #FFE7EF
 }
+
+.end-container  {
+  width: 50%;
+  height: 300px;
+ 
+  margin: 0 auto;
+}
+
+.end-message {
+  color:black;
+  text-align: center;
+  padding-top: 70px;
+
+}

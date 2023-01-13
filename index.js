@@ -23,12 +23,23 @@
     setTimeout(function(){
       dog = getNewDog()
       render()
-    }, 1200)
+    }, 1000)
     
   } else {
-    console.log("no more dogs")
+    setTimeout(function(){
+      endApp()
+    }, 1000)
+    
   }
  })
+
+ function endApp() {
+  document.querySelector('.bottom-buttons').style.display = "none"
+  document.querySelector('.dog').innerHTML = `
+    <div class="end-container">
+      <h3 class="end-message"> Sorry, there are no more dogs in your area. </h3>
+    </div>`
+ }
 
 
  let dog = getNewDog()
