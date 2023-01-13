@@ -12,7 +12,7 @@ background-color: #FFF;
 }
 
 .container {
-  width: 90%;
+  width: 70%;
   max-width: 550px;
   margin: 0 auto;
 }
@@ -36,16 +36,16 @@ background-color: #FFF;
 
 .dog-id {
   position: absolute;
-  bottom: 55px;
+  bottom: 50px;
   left: 20px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .dog-bio {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   color: #B7B7B7;
 }
 
@@ -69,7 +69,7 @@ background-color: #FFF;
 }
 
 .bottom-buttons {
-  width: 30%;
+  width: 40%;
   margin: 25px auto;
   display: flex;
   justify-content: space-around;

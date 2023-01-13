@@ -5,7 +5,7 @@ class Dog {
   
   //Badges are set to display none until a button is clicked
   getDogHtml () {
-    const {avatar, name, age, bio} = this
+    const {avatar, name, age, bio, hasBeenSwiped, hasBeenLiked} = this
     return `
       <img class="dog-img" src="${avatar}" alt="dog-image">
       <img class="like-badge" src= "./images/badge-like.png" alt="like-badge" />
@@ -16,6 +16,20 @@ class Dog {
    } 
 
    
+   likeDog () {
+    document.querySelector('.like-badge').style.display = "block"
+    document.querySelector('.nope-badge').style.display = "none"
+    this.hasBeenSwiped = true
+    this.hasBeenLiked = true
+   }
+  
+   rejectDog () {
+    document.querySelector('.nope-badge').style.display = "block"
+    document.querySelector('.like-badge').style.display = "none"
+    this.hasBeenSwiped = true
+   }
+
+  
 }
 
 
