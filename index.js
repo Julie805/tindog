@@ -3,28 +3,37 @@
  import Dog from './Dog.js'
 
 
-// is this right?
-
- let dogArray = dogs
+let currentDogIndex = 0
+let currentDog = new Dog(dogs[currentDogIndex])
 
  function getNewDog() {
-  const nextDogData = dogArray.shift()
-  return nextDogData ? new Dog(nextDogData) : {}
+  currentDogIndex += 1
+  currentDog = new Dog(dogs[currentDogIndex])
+  render()
  }
 
+ 
  document.querySelector('#heart').addEventListener('click', function () {
-  dog.likeDog()
- })
-
- document.querySelector('#cross').addEventListener('click', function () {
-  dog.rejectDog() 
-  // works --> console.log(getNewDog)
+  currentDog.likeDog()
   if (dogArray.length > 0) {
     setTimeout(function(){
       dog = getNewDog()
       render()
-    }, 1000)
-    
+    }, 1000)   
+  } else {
+    setTimeout(function(){
+      endApp()
+    }, 1000)  
+  }
+ })
+
+ document.querySelector('#cross').addEventListener('click', function () {
+  currentDog.rejectDog() 
+  if (dogArray.length > 0) {
+    setTimeout(function(){
+      currentDog = getNewDog()
+      render()
+    }, 1000)   
   } else {
     setTimeout(function(){
       endApp()
@@ -42,13 +51,13 @@
  }
 
 
- let dog = getNewDog()
+ //let dog = getNewDog()
 
  function render() {
-  document.querySelector('.dog').innerHTML = dog.getDogHtml()
+  document.querySelector('.dog').innerHTML = currentDog.getDogHtml()
  }
 
-//  let dog = getNewDog()
+
 render()
  
 
