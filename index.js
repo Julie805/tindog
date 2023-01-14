@@ -1,10 +1,9 @@
-// Remember to import the data and Dog class!
  import dogs from './data.js'
  import Dog from './Dog.js'
 
+ let currentDogIndex = 0
+ let currentDog = new Dog(dogs[currentDogIndex])
 
-let currentDogIndex = 0
-let currentDog = new Dog(dogs[currentDogIndex])
 
  function getNewDog() {
   currentDogIndex += 1
@@ -12,13 +11,19 @@ let currentDog = new Dog(dogs[currentDogIndex])
   render()
  }
 
- 
+ function startOver(){
+  console.log("clicked")
+  // currentDogIndex = 0
+  // currentDog = new Dog(dogs[currentDogIndex])
+  // currentDog.setMatchStatus(false)
+ }
+
+//Like dog
  document.querySelector('#heart').addEventListener('click', function () {
   currentDog.likeDog()
-  if (dogArray.length > 0) {
+  if (currentDogIndex < dogs.length-1) {
     setTimeout(function(){
-      dog = getNewDog()
-      render()
+      getNewDog()
     }, 1000)   
   } else {
     setTimeout(function(){
@@ -27,18 +32,17 @@ let currentDog = new Dog(dogs[currentDogIndex])
   }
  })
 
+//Reject dog
  document.querySelector('#cross').addEventListener('click', function () {
   currentDog.rejectDog() 
-  if (dogArray.length > 0) {
+  if (currentDogIndex < dogs.length-1) {
     setTimeout(function(){
-      currentDog = getNewDog()
-      render()
+      getNewDog()  
     }, 1000)   
   } else {
     setTimeout(function(){
       endApp()
-    }, 1000)
-    
+    }, 1000)  
   }
  })
 
@@ -47,16 +51,18 @@ let currentDog = new Dog(dogs[currentDogIndex])
   document.querySelector('.dog').innerHTML = `
     <div class="end-container">
       <h3 class="end-message"> Sorry, there are no more dogs in your area. </h3>
-    </div>`
+      <button class="start-over-btn" onclick="startOver()">Start Over</button>
+    </div>`   
  }
 
 
- //let dog = getNewDog()
+ //document.querySelector(".start-over-btn").addEventListener("click", startOver)
+
+
 
  function render() {
   document.querySelector('.dog').innerHTML = currentDog.getDogHtml()
  }
-
 
 render()
  

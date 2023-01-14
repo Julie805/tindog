@@ -2,10 +2,15 @@ class Dog {
   constructor(data) {
     Object.assign(this, data)
   }
-  
+
+  setMatchStatus(boolean) {
+    this.hasBeenLiked = boolean
+    this.hasBeenSwiped = true
+  }
+
   //Badges are set to display none until a button is clicked
   getDogHtml () {
-    const {avatar, name, age, bio, hasBeenSwiped, hasBeenLiked} = this
+    const {avatar, name, age, bio} = this
     return `
       <img class="dog-img" src="${avatar}" alt="dog-image">
       <img class="like-badge" src= "./images/badge-like.png" alt="like-badge" />
@@ -15,22 +20,17 @@ class Dog {
       `
    } 
 
-   
    likeDog () {
     document.querySelector('.like-badge').style.display = "block"
     document.querySelector('.nope-badge').style.display = "none"
-    this.hasBeenSwiped = true
-    this.hasBeenLiked = true
+    this.setMatchStatus(true)
    }
   
    rejectDog () {
     document.querySelector('.nope-badge').style.display = "block"
     document.querySelector('.like-badge').style.display = "none"
-    this.hasBeenSwiped = true
-   }
-
-  
+    this.setMatchStatus(false)
+   }  
 }
-
 
 export default Dog
